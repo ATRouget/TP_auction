@@ -30,21 +30,20 @@ class EnglishAuction():
         # Collect bids
         standing_bid = opening_bid
         winner = None
-        while len(bidders) > 1 :
-            new = []
-            for ibidder in range(len(bidders)):
+        initbid = -1
+        while initbid != standing_bid :
+            initbid = standing_bid
+            for bidder in bidders:
                 bid = self.cli.prompt(
-                    f"Standing bid is {standing_bid}. {bidders[ibidder]} bids:")
+                    f"Standing bid is {standing_bid}. {bidder} bids:")
                 if bid :
                     bid = int(bid)
                     if bid > standing_bid:
                         standing_bid = bid
-                        winner = bidders[ibidder]
-                        new.append(winner)
-            bidders = new
+                        winner = bidder
 
         # Display winner
-        self.cli.display("\n~~~~~~~~\n")
+        #self.cli.display("\n~~~~~~~~\n")
         self.cli.display(f"Winner is {winner}. Winning bid is {standing_bid}.")
 
 
