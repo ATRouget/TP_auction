@@ -23,17 +23,13 @@ class BlindAuction(Auction):
         winner = None
         for bidder in bidders:
             bid = self.cli.prompt(
-                f"Opening bid is {opening_bid}. {bidder} bids:"
-            )
+                f"Opening bid is {opening_bid}. {bidder} bids:")
             bid = int(bid)
             if bid > standing_bid:
                 standing_bid = bid
                 winner = bidder
 
-        # Display winner
-        self.cli.display("\n~~~~~~~~\n")
-        self.cli.display(f"Winner is {winner}. Winning bid is {standing_bid}.")
-
+        Auction.displaywinner(self, winner, standing_bid)
 
 if __name__ == "__main__":
     auction = BlindAuction()

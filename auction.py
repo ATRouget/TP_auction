@@ -28,3 +28,9 @@ class Auction():
         opening_bid = int(opening_bid)
         self.cli.display(f"Opening bid is: {opening_bid}")
         return opening_bid
+    
+    def displaywinner(self, winner, sbid):
+        self.cli.display("\n~~~~~~~~\n")
+        self.cli.display(f"Winner is {winner}. Winning bid is {sbid}.")
+
+

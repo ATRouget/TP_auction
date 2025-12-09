@@ -30,9 +30,8 @@ class EnglishAuction(Auction):
                         standing_bid = bid
                         winner = bidder
 
-        # Display winner
-        self.cli.display("\n~~~~~~~~\n")
-        self.cli.display(f"Winner is {winner}. Winning bid is {standing_bid}.")
+        Auction.displaywinner(self, winner, standing_bid)
+
 
 
 
